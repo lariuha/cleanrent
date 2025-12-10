@@ -94,7 +94,7 @@ export default function Home() {
             className="group flex items-center justify-center w-full p-4 bg-[#0077ff] hover:bg-[#447bba] text-white rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <FaVk className="w-6 h-6 mr-3" />
-            Перейти ВКонтакте
+            Перейти во ВКонтакте
           </Link>
         </div>
 
