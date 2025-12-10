@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 bg-slate-50 relative overflow-hidden">
-      {/* Декоративные элементы фона (наш стиль "пузырьки/глина") */}
+      {/* Декоративные элементы фона */}
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-[#FFD700] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
       <div className="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
@@ -14,7 +14,6 @@ export default function Home() {
         {/* Логотип / Иконка */}
         <div className="flex justify-center">
           <div className="w-20 h-20 bg-[#FFD700] rounded-2xl flex items-center justify-center shadow-lg rotate-3 hover:rotate-0 transition-transform duration-300">
-             {/* Иконка "Чистота" (SVG) */}
              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-slate-900">
               <path fillRule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813a3.75 3.75 0 002.576-2.576l.813-2.846A.75.75 0 019 4.5zM6.994 6.994a1.5 1.5 0 01-2.121 0l-.88-.88a1.5 1.5 0 012.122-2.121l.879.88a1.5 1.5 0 010 2.12zm12.728 9.9a1.5 1.5 0 010 2.12l-.88.88a1.5 1.5 0 01-2.122-2.12l.88-.88a1.5 1.5 0 012.122 0z" clipRule="evenodd" />
             </svg>
@@ -31,13 +30,66 @@ export default function Home() {
           </p>
           <p className="text-slate-500 text-sm leading-relaxed">
             Мы готовим удобный сервис бронирования техники. 
-            <br/>А пока принимаем заказы в соцсетях:
+            <br/>Связаться с нами можно прямо сейчас:
           </p>
         </div>
 
-        {/* Кнопки */}
+        {/* БЛОК КНОПОК */}
         <div className="space-y-3 pt-2">
-          {/* Instagram Button - Karcher Style */}
+          
+          {/* 1. КНОПКА ПОЗВОНИТЬ (Самая важная) */}
+          <Link 
+            href="tel:+37368269055" 
+            className="group flex items-center justify-center w-full p-4 bg-[#FFD700] hover:bg-[#e6c200] text-slate-900 rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            <svg className="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Позвонить: 068 269 055
+          </Link>
+
+          {/* СЕТКА МЕССЕНДЖЕРОВ (WhatsApp, Viber, Telegram) */}
+          {/* Мы делаем их отдельными большими кнопками для удобства пальцев */}
+
+          {/* WhatsApp */}
+          <Link 
+            href="https://wa.me/37368269055" 
+            target="_blank"
+            className="group flex items-center justify-center w-full p-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            {/* Иконка WhatsApp */}
+            <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Написать в WhatsApp
+          </Link>
+
+          {/* Viber */}
+          <Link 
+            href="viber://chat?number=37368269055" 
+            className="group flex items-center justify-center w-full p-4 bg-[#7360F2] hover:bg-[#6452d9] text-white rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            {/* Иконка Viber */}
+            <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.526 4.73C19.782 5.962 21.323 8.163 21.644 11.08c.075.676-.41 1.258-1.096 1.344-.668.083-1.309-.434-1.383-1.127-.245-2.225-1.425-3.903-3.14-4.839-.597-.326-.826-1.066-.514-1.666.313-.6.945-.884 1.543-.558.158.086.315.183.472.296zM4.136 9.69c-.58-3.93 2.023-6.526 5.306-5.289 1.944.733 3.653 2.505 4.35 4.542.41 1.2-.236 2.098-1.107 2.645-.373.235-.744.305-.913.06-.118-.17-.183-.377-.18-.6-.007-.468-.007-.947-.006-1.427a1.09 1.09 0 0 1 .453-.943c.966-.684 1.154-1.895.394-2.825-.794-.972-2.115-1.04-3.007-.156a1.105 1.105 0 0 1-.942.164c-2.316-.762-3.166 1.168-3.006 2.678.07 2.923 1.976 5.98 4.714 7.632 1.385.836 2.937 1.026 3.997-.56.402-.603.268-1.156-.395-1.503-.598-.312-1.22-.577-1.846-.836-.264-.11-.53-.133-.746.074-.298.286-.6.57-.91.846-.37.33-.787.352-1.206.096-1.564-.954-2.73-2.348-3.414-4.04-.183-.454-.084-.827.28-1.134.288-.243.542-.522.808-.79.294-.306.284-.665.04-1.018-.328-.475-.625-.97-1.002-1.403-.683-.78-1.353-.668-1.663.248zM15.42 2.534c.48-.198 1.025.04 1.22.52.88 2.158 1.014 4.37.126 6.55-.2.483-.75.717-1.233.52-.482-.197-.717-.746-.52-1.228.665-1.636.565-3.292-.095-4.912-.27-.665-.02-1.246.502-1.45z"/>
+            </svg>
+            Написать в Viber
+          </Link>
+
+          {/* Telegram */}
+          <Link 
+            href="https://t.me/+37368269055" 
+            target="_blank"
+            className="group flex items-center justify-center w-full p-4 bg-[#0088cc] hover:bg-[#007ebd] text-white rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            {/* Иконка Telegram */}
+            <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            Написать в Telegram
+          </Link>
+
+          {/* Instagram Button - Gradient Style */}
           <Link 
             href="https://www.instagram.com/cleanrent.md/" 
             target="_blank"
